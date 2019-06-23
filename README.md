@@ -1,11 +1,21 @@
 # 项目介绍
  react + react-router + redux技术来实现好租客App
 
- # window 修改端口 set PORT=8888 && 
+ # 下载项目后，安装配置node_modules
+    npm install
+
+ # 全局安装serve,进入启动的文件中
+    npm i -g serve
+    serve -p 8080
+    localhost:8080
+
+ # window 修改端口号 
+    set PORT=8888 && 
     mac | linux PORT=8888 &&
+
  # 安装 cross-env 跨平台  
     npm i cross-env -D
- # cross-env PORT=8888
+    cross-env PORT=8888
 
  # 安装 路由
     npm i react-router-dom
@@ -22,7 +32,7 @@
 # 安装axios
     npm i axios
 
-# 打开接口文档 进入myapi中
+# 打开interface-document 进入myapi中
     npm start
 
 # axios的优化 async await
