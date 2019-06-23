@@ -5,6 +5,8 @@ import "./index.css"
 // 引入semantic-ui-css  全局引入
 import 'semantic-ui-css/semantic.min.css'
 import App from './App.jsx';
+import axios from "axios"
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
