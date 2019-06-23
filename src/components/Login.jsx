@@ -2,7 +2,6 @@ import React from 'react';
 import { Form } from 'semantic-ui-react';
 import {withRouter} from "react-router-dom"
 import "./Login.css"
-import Axios from 'axios';
 
 class Login extends React.Component {
     // 构造函数
@@ -22,25 +21,26 @@ class Login extends React.Component {
     }
 
     // 登录
-    login = (e)=>{
+    login = async (e)=>{
         // 阻止默认行为
         e.preventDefault()
         // 发送axios请求
-        Axios.post("http://47.96.21.88:8086/users/login",{
-            uname:this.state.uname,
-            pwd:this.state.pwd
-        }).then(res=>{
-            let {meta,data} = res.data
-            if(meta.status === 200){
-                // 1.将token保存到本地
-                localStorage.setItem("myToken",data.token)
-                // 2.路由跳转到主页 home 页面
-                console.log(meta.msg)
-                this.props.history.push("/home")
-            }else{
-                console.log(meta.msg)
-            }
+        let {uname,pwd} = this.state
+        let res = await this.axios.post("users/login",{ 
+            uname,
+            pwd
         })
+        console.log(res)
+        let {meta,data} = res
+        if(meta.status === 200){
+            // 1.将token保存到本地
+            localStorage.setItem("myToken",data.token)
+            // 2.路由跳转到主页 home 页面
+            console.log(meta.msg)
+            this.props.history.push("/home")
+        }else{
+            console.log(meta.msg)
+        }
     }
 
     // 渲染方法

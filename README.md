@@ -24,3 +24,20 @@
 
 # 打开接口文档 进入myapi中
     npm start
+
+# axios的优化 async await
+    1.await必须在async函数中使用，await可以在primise对象前使用
+    2.await会暂停async函数的执行，等待primise的结果，才会继续执行async。
+
+# 将axios对象绑定到react组件原型上，这样react的组件就可以使用了
+    React.Component.prototype.axios = axios
+
+ # 给axios配置默认的基础路径
+    axios.defaults.baseURL = "http://47.96.21.88:8086/"
+
+ # 给axios配置-响应拦截器，直接返回res.data数据
+    axios.interceptors.response.use(function(response){
+        return response.data
+    },function(error){
+        return error
+    })
