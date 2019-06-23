@@ -29,7 +29,7 @@ export default class Home extends React.Component {
                             </Grid.Column>
                             <Grid.Column>
                                 <NavLink to="/home/info">
-                                    <Icon name="search"></Icon>
+                                    <Icon name="paste"></Icon>
                                     <p>资讯</p>
                                 </NavLink>
                             </Grid.Column>

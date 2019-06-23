@@ -51,3 +51,10 @@
     },function(error){
         return error
     })
+
+# react轮播图专用库 React-Image-Gallery
+    npm i react-image-gallery
+    1.引入轮播图样式 image-gallery.css
+        import "react-image-gallery/styles/css/image-gallery.css";
+    2.导包
+        import ImageGallery from 'react-image-gallery';
