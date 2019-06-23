@@ -52,6 +52,16 @@
         return error
     })
 
+# 添加请求拦截器
+    axios.interceptors.request.use(function (config) {
+        if(!window.location.href.endsWith("/login")){
+            config.headers.Authorization = localStorage.getItem("myToken")
+        }
+        return config;
+    }, function (error) {
+        return Promise.reject(error);
+    });
+
 # react轮播图专用库 React-Image-Gallery
     npm i react-image-gallery
     1.引入轮播图样式 image-gallery.css

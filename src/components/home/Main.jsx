@@ -9,18 +9,22 @@ class Main extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            imgList:[
-                  {
-                    original: 'http://47.96.21.88:8086/public/1.png'
-                  },
-                  {
-                    original: 'http://47.96.21.88:8086/public/2.png'
-                  },
-                  {
-                    original: 'http://47.96.21.88:8086/public/3.png'
-                  }
-            ]
+            imgList:[]
         }
+    }
+
+    // 等页面加载完成后,钩子函数 初始化加载轮播图
+    async componentDidMount(){
+        let res = await this.axios.post("homes/swipe")
+        let {meta,data} = res
+        if(meta.status === 200){
+            this.setState({
+                imgList:data.list
+            })
+        }else{
+            console.log(meta.msg)
+        }
+
     }
     render(){
         return (
