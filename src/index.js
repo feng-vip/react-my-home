@@ -10,7 +10,8 @@ import axios from "axios"
 React.Component.prototype.axios = axios
 
 // 给axios配置默认的基础路径
-axios.defaults.baseURL = "http://47.96.21.88:8086/"
+// axios.defaults.baseURL = "http://47.96.21.88:8086/"
+axios.defaults.baseURL = "http://localhost:9999/"
 
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {

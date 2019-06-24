@@ -9,6 +9,12 @@
     serve -p 8080
     localhost:8080
 
+ # 本地启动端口，下载phpstudy,sqlyog数据库
+    1.用户名:root,本地密码：123456，然后登录phpAdmin，
+    2.线上密码：root
+    *****
+    3.在myapi,config中的config-dev.js，修改数据库连接密码
+
  # window 修改端口号 
     set PORT=8888 && 
     mac | linux PORT=8888 &&
@@ -68,3 +74,5 @@
         import "react-image-gallery/styles/css/image-gallery.css";
     2.导包
         import ImageGallery from 'react-image-gallery';
+
+
