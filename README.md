@@ -94,3 +94,38 @@
     .content::-webkit-scrollbar-track {
         background-color: #fff;
     }
+
+# react数组遍历  
+    1.map(item=>()) 
+    2.forEach(item=>{}) 记得小驼峰
+
+# promise.all()请求封装实现loading加载效果
+    // 主页加载效果
+    <Dimmer inverted active={this.state.loading} page>
+        <Loader>Loading</Loader>
+    </Dimmer>
+    // 请求的封装
+    doRequest = (url,dataName)=>{
+        return this.axios.post(url).then(res=>{
+            let {meta,data} = res
+            if(meta.status === 200){
+                this.setState({
+                    [dataName]:data.list
+                })
+            }
+        })
+    }
+    // 等页面加载完成后,钩子函数 初始化加载轮播图
+    async componentDidMount(){
+        // Promise.all()封装，实现数据加载效果
+        await Promise.all([
+            this.doRequest("homes/swipe",'imgList'),
+            this.doRequest("homes/menu",'menuList'),
+            this.doRequest("homes/info",'infoList'),
+            this.doRequest("homes/faq",'faqList'),
+            this.doRequest("homes/house",'houseList'),
+        ])
+        this.setState({
+            loading:false
+        })
+    }

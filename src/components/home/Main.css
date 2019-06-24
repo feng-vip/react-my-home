@@ -110,10 +110,6 @@
     margin-top:2px;
   }
 
-  .allH{
-    height: 1000px;
-  }
-
   /* 好客问答 */
   .home-ask-title {
     height: 40px;
@@ -152,4 +148,21 @@
   }
   .home-ask ul li div:first-child i {
     color: green;
+  }
+
+  /* 主页房屋css */
+  .home-hire-title {
+    height: 40px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 40px;
+    padding-left: 10px;
+    border-bottom: 1px solid #CECECE;
+  }
+  .ui.items>.item>.image {
+    margin-left: 10px;
+    margin-top: 6px;
+  }
+  .ui.items>.item>.content>.description:last-child {
+    color: orange;
   }
