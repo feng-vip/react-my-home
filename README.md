@@ -75,4 +75,22 @@
     2.导包
         import ImageGallery from 'react-image-gallery';
 
-
+# 滚动条样式 
+    .content{
+        overflow-y:auto
+    }
+    .content::-webkit-scrollbar{
+        width: 3px;
+    }
+    .content::-webkit-scrollbar-thumb{
+        background-color: #CBDAEA;
+        -webkit-border-radius: 2em;
+        -moz-border-radius: 2em;
+        border-radius: 2em;
+        min-height: 2rem;
+        background-clip: padding-box;
+        border-radius: 5px;
+    }
+    .content::-webkit-scrollbar-track {
+        background-color: #fff;
+    }
