@@ -133,6 +133,7 @@ class ImageModal extends React.Component{
               </Modal.Content>
               <Modal.Actions>
                 <Button positive icon='checkmark' onClick={this.imageFile} labelPosition='right' content='确定' />
+                {/* <Button  icon='close'  labelPosition='right' content='取消' /> */}
               </Modal.Actions>
             </Modal>
           </div>

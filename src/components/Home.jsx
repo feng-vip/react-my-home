@@ -2,11 +2,11 @@ import React from 'react';
 import "./Home.css"
 import { Grid,Icon} from "semantic-ui-react"
 import { NavLink,Switch,Route}  from 'react-router-dom'
-import Main from "./home/Main"
-import Info from "./home/Info"
-import My from "./home/My"
-import Chat from "./home/Chat"
-import Demo from "./home/Demo"
+import Main from "./home/main/Main"
+import Info from "./home/info/Info"
+import My from "./home/my/My"
+import Chat from "./home/chat/Chat"
+// import Demo from "./home/Demo"
 export default class Home extends React.Component {
     render(){
         return (
@@ -16,7 +16,7 @@ export default class Home extends React.Component {
                         <Route exact path="/home" component={Main}></Route>
                         <Route path="/home/info" component={Info}></Route>
                         <Route path="/home/my" component={My}></Route>
-                        <Route path="/home/demo" component={Demo}></Route>
+                        <Route path="/home/chat" component={Chat}></Route>
                     </Switch>
                 </div>
                 <home className="home_menu">
@@ -35,7 +35,7 @@ export default class Home extends React.Component {
                                 </NavLink>
                             </Grid.Column>
                             <Grid.Column>
-                                <NavLink to="/home/demo">
+                                <NavLink to="/home/chat">
                                     <Icon name="phone"></Icon>
                                     <p>微聊</p>
                                 </NavLink>

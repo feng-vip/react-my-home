@@ -143,5 +143,7 @@
     2.还有后面的sassstyle...文件都要改
 
 # 头像裁切插件 react-avatar-editor
+    npm i react-avatar-editor
 
+# 时间戳转时间 npm i moment
     
