@@ -141,4 +141,7 @@
     const sassRegex = /\.(scss|sass)$/;
     const sassModuleRegex = /\.module\.(scss|sass)$/;
     2.还有后面的sassstyle...文件都要改
+
+# 头像裁切插件 react-avatar-editor
+
     
