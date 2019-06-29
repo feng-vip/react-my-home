@@ -44,6 +44,7 @@ class My extends React.Component {
         console.log(res)
         let {meta,data} = res
         if(meta.status === 200){
+            localStorage.setItem("user_avatar",data.avatar)
             this.setState({
                 avatar:data.avatar,
                 username:data.username
