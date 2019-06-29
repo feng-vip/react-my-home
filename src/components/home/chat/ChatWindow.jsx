@@ -11,8 +11,7 @@ class ChatWindow extends React.Component{
             msgContent:""
         }
     }
-    // 初始化获取；聊天列表是数据
-    async componentDidMount(){
+    getInit= async ()=>{
         let {from_user,to_user} = this.props.chatItem
         let res = await this.axios.post('chats/info',{
             from_user: from_user,
@@ -25,13 +24,24 @@ class ChatWindow extends React.Component{
             // 该回调函数用来处理服务器返回的消息（其实就是对方发送消息）
             // 其实就是接收对方返回的消息
             let client = handle(currentUser,(data)=>{
-                console.log(data)
+                // 该回调函数用来处理服务器返回的消息（其实就是对方发送消息）
+            // 其实就是接收对方返回的消息
+                let newList = [...this.state.list];
+                // data.content表示接受到消息内容
+                newList.push(JSON.parse(data.content));
+                this.setState({
+                    list: newList
+                })
             })
             this.setState({
                 list:data.list,
                 client:client
             })
         }
+    }
+    // 初始化获取；聊天列表是数据
+    componentDidMount(){
+        this.getInit()
     }
 
     // 给服务器发送数据，即时通信
@@ -40,8 +50,7 @@ class ChatWindow extends React.Component{
             id:new Date().getTime(),
             from_user: this.props.chatItem.to_user,
             to_user: this.props.chatItem.from_user,
-            chat_msg: this.state.msgContent,
-            avatar:localStorage.getItem("user_avatar")
+            chat_msg: this.state.msgContent
           }
         // 把消息发送出去
         this.state.client.emitEvent("msg_text_send",JSON.stringify(pdata));
@@ -50,6 +59,7 @@ class ChatWindow extends React.Component{
             msgContent:"",
             list:newList
         })
+        this.getInit()
     } 
     // 受控组件，处理
     handleChange=(e)=>{
@@ -68,7 +78,7 @@ class ChatWindow extends React.Component{
                     <ul>
                         {
                             this.state.list.map(item=>(
-                                <li key={item.id} className={this.props.chatItem.to_user===item.to_user?
+                                <li key={item.id} className={this.props.chatItem.from_user===item.from_user?
                                  'chat-info-left':'chat-info-right'}>
                                     <img src={item.avatar} alt=""/>
                                     <span>{item.chat_msg}</span>
