@@ -100,7 +100,7 @@ class Main extends React.Component {
             this.doRequest("homes/menu",'menuList'),
             this.doRequest("homes/info",'infoList'),
             this.doRequest("homes/faq",'faqList'),
-            this.doRequest("homes/house",'houseList'),
+            this.doRequest("homes/house",'houseList')
         ])
         this.setState({
             loading:false

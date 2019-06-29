@@ -129,3 +129,16 @@
             loading:false
         })
     }
+
+# react上拉刷新，下拉加载库 react-touch-loader
+    npm i react-touch-loader
+
+# react开启less支持 ，找node_modules配置文件 react-scripts
+    npm install less less-loader -D
+    注意：react所有的webpack配置文件都被 react-scripts 隐藏了
+
+    1.找到webpacg.config.js，修改sass->改为less即可
+    const sassRegex = /\.(scss|sass)$/;
+    const sassModuleRegex = /\.module\.(scss|sass)$/;
+    2.还有后面的sassstyle...文件都要改
+    
