@@ -12,7 +12,7 @@
     "react-dom": "^16.8.6",
     "react-image-gallery": "^0.8.17",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "react-touch-loader": "^1.1.4",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.87.2"
